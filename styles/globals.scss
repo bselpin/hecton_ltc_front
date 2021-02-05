@@ -1,0 +1,81 @@
+@import "Variable.scss";
+
+::-webkit-scrollbar {
+	width: 1.5rem;
+}
+
+::-webkit-scrollbar:horizontal {
+	height: 1.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $footer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input,
+button,
+select {
+	all: unset;
+	box-sizing: border-box;
+}
+
+button {
+	cursor: pointer;
+	user-select: none;
+
+	&:disabled {
+		background: $gray3 !important;
+	}
+}
+
+html,
+body {
+	font-family: $spoqa;
+	font-size: 9px;
+	width: 100%;
+	color: $black;
+	height: auto;
+	letter-spacing: -0.5px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-y: scroll;
+
+	@include media(tablet) {
+		font-size: 8.5px;
+	}
+
+	@include media(mobile) {
+		font-size: calc(0.5px + 1.8vw);
+	}
+}
+
+.pnlm-container {
+	width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	word-break: keep-all;
+}

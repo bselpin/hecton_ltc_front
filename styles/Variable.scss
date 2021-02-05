@@ -1,0 +1,127 @@
+$main: #00ca87;
+// $main: #0055ff;
+$sub: #00ca87;
+// $sub: #4174ff;
+$beige: #f5f1e5;
+$yellow: #ffee00;
+$rose: #ff0077;
+$red: #ff153c;
+$footer: #292935;
+$footerAlt: #fdfdfd;
+$black: #000000;
+$green: #01ad57;
+$green2: #11e97d;
+$gray: #faf8f7;
+$gray2: #f1efef;
+$gray3: #d1d1d9;
+$gray4: #a1a5af;
+$gray5: #727272;
+$gray6: #525252;
+$female: #ec5c98;
+$male: #425df3;
+$spoqa: "Spoqa Han Sans Neo", sans-serif;
+$bhan: "Black Han Sans", sans-serif;
+$ease: cubic-bezier(0, 0.625, 0.31, 0.96);
+$shadow: rgba(40, 30, 20, 0.15);
+$naver: #19ce60;
+$kakao: #ffcd00;
+
+$breakpoint-mobile: 800px;
+$breakpoint-tablet: 1200px;
+$breakpoint-desktop: 1400px;
+
+@mixin mobile {
+	@media (max-width: #{$breakpoint-mobile}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$breakpoint-tablet}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$breakpoint-desktop}) {
+		@content;
+	}
+}
+
+@mixin media($size) {
+	@if $size == mobile {
+		@media (max-width: #{$breakpoint-mobile}) {
+			@content;
+		}
+	}
+	@if $size == tablet {
+		@media (max-width: #{$breakpoint-tablet}) {
+			@content;
+		}
+	}
+}
+
+@mixin psuedo {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+@mixin jcc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin button {
+	background: $main;
+	color: #fff;
+	padding: 1.5rem 2rem;
+	display: inline-block;
+	margin-top: 1rem;
+	border-radius: 2rem;
+	font-weight: 500;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+@mixin closeBtn {
+	cursor: pointer;
+	width: 3.5rem;
+	height: 3.5rem;
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	z-index: 6;
+	background: url("../assets/icons/close.svg") center center no-repeat;
+}
+
+@mixin mobileSearch {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+	z-index: 9999;
+	transition: transform 0.2s;
+	transform: translate3d(-100vw, 0, 0);
+	display: none;
+}
+
+@mixin mobileBack {
+	position: absolute;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: url("../assets/icons/back.svg") center center no-repeat;
+	background-size: cover;
+	top: 2.5rem;
+	display: none;
+
+	@include media(mobile) {
+		display: block;
+	}
+}
