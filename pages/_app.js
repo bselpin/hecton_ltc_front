@@ -4,6 +4,11 @@ import "regenerator-runtime/runtime"
 import "react-app-polyfill/ie11"
 import "react-app-polyfill/stable"
 import "url-search-params-polyfill"
+import withRedux from "next-redux-wrapper"
+import { Provider } from "react-redux"
+import { createStore, compose, applyMiddleware } from "redux"
+import reducer from "../reducers"
+import { composeWithDevTools } from "redux-devtools-extension"
 import Head from "next/head"
 import "../styles/globals.scss"
 
@@ -49,7 +54,11 @@ function MyApp({ Component, pageProps }) {
 					sizes="16x16"
 					href="/favicon-16x16.png"
 				/>
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="true"
+				/>
 				<link
 					href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
 					rel="preload"
@@ -67,15 +76,6 @@ function MyApp({ Component, pageProps }) {
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;display=swap"
-				/>
-				<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-				<meta
-					name="google-site-verification"
-					content="M5dYedIwOSUbZ7yGBAp5nsfZgNboFiJJjX_fxu2VaN0"
-				/>
-				<meta
-					name="naver-site-verification"
-					content="edef9311d871335c53eb3a3087e75bb01ba972ab"
 				/>
 			</Head>
 			<Component {...pageProps} />

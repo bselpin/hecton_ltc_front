@@ -8,6 +8,8 @@ export default function Home() {
 			<Head>
 				<title>Create Next App</title>
 			</Head>
+			<p>fdasfs</p>
+			<Main />
 		</div>
 	)
 }
